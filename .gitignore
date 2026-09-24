@@ -1,0 +1,8 @@
+*.zip
+*.log
+.DS_Store
+Thumbs.db
+
+# Local only: Claude working notes (machine paths) and screenshots
+CLAUDE.md
+/*.png
