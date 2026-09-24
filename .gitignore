@@ -3,6 +3,5 @@
 .DS_Store
 Thumbs.db
 
-# Local only: Claude working notes (machine paths) and screenshots
+# Local only: Claude working notes (machine paths)
 CLAUDE.md
-/*.png

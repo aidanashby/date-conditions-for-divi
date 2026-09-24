@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Date Conditions for Divi
  * Description:       Filter Divi 5 Loops by ACF date fields compared with the current date and time, and show a Divi Library item when a Loop is empty.
- * Version:           0.1.2
+ * Version:           0.1.3
  * Requires at least: 6.5
  * Requires PHP:      7.4
  * Author:            aidanashby
@@ -17,7 +17,7 @@ namespace DCFD;
 
 defined( 'ABSPATH' ) || exit;
 
-const VERSION  = '0.1.2';
+const VERSION  = '0.1.3';
 const MIN_DIVI = '5.8.1';
 
 require_once __DIR__ . '/includes/rules.php';
@@ -25,6 +25,28 @@ require_once __DIR__ . '/includes/fields.php';
 require_once __DIR__ . '/includes/query.php';
 require_once __DIR__ . '/includes/empty-state.php';
 require_once __DIR__ . '/includes/rest.php';
+
+/**
+ * Updates from GitHub releases, via the bundled Plugin Update Checker (MIT). It checks the
+ * latest release on api.github.com about twice a day and offers the attached zip as a normal
+ * WordPress plugin update. Every release needs the plugin zip attached as an asset.
+ * Its stored data is removed in uninstall.php.
+ */
+function init_updater(): void {
+	$loader = __DIR__ . '/plugin-update-checker/plugin-update-checker.php';
+	if ( ! file_exists( $loader ) ) {
+		return;
+	}
+	require_once $loader;
+
+	$checker = \YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
+		'https://github.com/aidanashby/date-conditions-for-divi/',
+		__FILE__,
+		'date-conditions-for-divi'
+	);
+	$checker->getVcsApi()->enableReleaseAssets();
+}
+add_action( 'plugins_loaded', __NAMESPACE__ . '\init_updater' );
 
 /**
  * Divi 5 at the tested baseline or later. The hooks this plugin uses only exist there;

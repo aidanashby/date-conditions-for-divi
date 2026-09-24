@@ -25,6 +25,8 @@ It all happens automatically as time passes. Nothing needs saving or unpublishin
 3. Give your post type an ACF **Date Picker** or **Date Time Picker** field, such as `event_ends`.
 4. In the Visual Builder, open an element with **Loop** turned on. You'll find the new settings under **Content → Loop**, below Divi's own Loop settings.
 
+After that, new versions show up under **Dashboard → Updates** like any other plugin.
+
 Full instructions are in the [plugin's readme](date-conditions-for-divi/readme.md).
 
 ## Example
@@ -108,7 +110,7 @@ The expected results assume "now" is between 1 September and 1 December 2026. Af
 
 1. Bump the version in the plugin header and the `DCFD\VERSION` constant, and add a CHANGELOG.md entry.
 2. Zip the `date-conditions-for-divi/` folder so the zip contains that folder. On Windows, use `tar -a -c -f date-conditions-for-divi-<version>.zip date-conditions-for-divi`, not PowerShell's `Compress-Archive`, which writes backslash paths that Linux hosts extract wrongly.
-3. Create a GitHub release tagged `v<version>` with the zip attached.
+3. Create a GitHub release tagged `v<version>` with the zip attached. The zip must be attached: installed copies update from it, through the bundled [Plugin Update Checker](https://github.com/YahnisElsts/plugin-update-checker) (`plugin-update-checker/`, MIT).
 
 ### Conventions
 

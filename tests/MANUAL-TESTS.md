@@ -1,4 +1,4 @@
-# Test matrix: Date Conditions for Divi 0.1.2
+# Test matrix: Date Conditions for Divi 0.1.3
 
 Results as of 23 September 2026 on a local WordPress Studio site (SQLite, Divi 5.8.1, ACF 6.8.10, Europe/London). Everything has passed except three optional checks. On 24 September 2026, 0.1.1 was also confirmed in real use on a MySQL staging site.
 
@@ -63,6 +63,15 @@ The test data comes from `tests/fixtures/` (see the root README). Fixture posts:
 | Current Page Loop shows "Can't verify…" | Message shown | Not checked. On ordinary pages Divi only offers Post Types, Terms, Users and Menus (23 Sep); Current Page appears in Theme Builder templates, where the rules were confirmed working (row above). ⏳ optional: glance at the message next time a TB template is open |
 | Settings absent from the preset modal | Absent (Loop group has presets off) | ✅ 23 Sep |
 | **Save with the plugin deactivated, then reactivate** | Rules still on the page | ✅ 23 Sep |
+
+## Updates and uninstall (0.1.3)
+
+| Case | Expected | Result |
+|---|---|---|
+| Update checker asks GitHub for the latest release | Finds the release and its attached zip, no API errors | ✅ 24 Sep (found v0.1.2 and its zip) |
+| Checker schedules its own check | `puc_cron_check_updates-date-conditions-for-divi` scheduled | ✅ 24 Sep |
+| `uninstall.php` after a real check | Site option `external_updates-date-conditions-for-divi` and the cron event both removed | ✅ 24 Sep (run directly, since deleting a linked plugin folder deletes the source) |
+| A site on 0.1.3 is offered the next release under Dashboard → Updates | Update offered and installs | ⏳ at the next release |
 
 ## MySQL (staging site)
 

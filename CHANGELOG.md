@@ -2,6 +2,13 @@
 
 All notable changes to Date Conditions for Divi. Versions follow [semantic versioning](https://semver.org/).
 
+## 0.1.3 (2026-09-24)
+
+### Added
+
+- **Updates from GitHub.** The plugin now checks this repo's latest release about twice a day and offers it as a normal WordPress plugin update, using the bundled [Plugin Update Checker](https://github.com/YahnisElsts/plugin-update-checker) 5.7 (MIT). Sites running 0.1.2 or earlier need to upload 0.1.3 by hand once; later versions arrive as updates.
+- **Clean uninstall.** Deleting the plugin removes the update checker's stored data (one site option and one scheduled event). Settings saved on pages are left in the page content, where Divi ignores them.
+
 ## 0.1.2 (2026-09-24)
 
 ### Fixed

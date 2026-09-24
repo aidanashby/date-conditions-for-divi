@@ -2,7 +2,7 @@
 
 This plan assumes the four SPEC.md changes in SPIKE-REPORT.md are approved (they were, 23 September 2026). Decisions are listed at the end.
 
-## Build status (24 September 2026): v0.1.2
+## Build status (24 September 2026): v0.1.3
 
 | Step | State |
 |---|---|
@@ -14,6 +14,7 @@ This plan assumes the four SPEC.md changes in SPIKE-REPORT.md are approved (they
 | 6. Theme Builder + `current_page` | ✅ TB archive template with a `current_page` Loop and empty state. Current Page is only offered in TB templates, not on ordinary pages |
 | 7. readme.md | ✅ `date-conditions-for-divi/readme.md` |
 | 8. MySQL run | ✅ Real use on a MySQL staging site (a vacancies page: date rules and empty state). Scripted fixture run S1–S14 not repeated on MySQL: real use judged enough (24 Sep) |
+| 11. Updates from GitHub + uninstall (0.1.3) | ✅ Bundled Plugin Update Checker 5.7 finds the latest release and its zip; uninstall.php removes the checker's option and cron event |
 | 10. Customizer CSS kept (0.1.2) | ✅ Found on the staging site: forcing the shared unified stylesheet inline dropped the Theme Customizer CSS once a cached file existed. Now uses Divi's separate `builder` / `module-design` resource, as Divi does for random-order Loops |
 | 9. Global variables in Library items (0.1.1) | ✅ Found on the staging site: Divi didn't define a variable used only by the Library item. The plugin now prints the item's variable and colour definitions (`global_data_styles()` in empty-state.php, using Divi's public `DetectFeature` and `Style` methods) |
 
@@ -47,7 +48,7 @@ date-conditions-for-divi/                  (repo root)
 The spec's five PHP responsibilities map to five files. The spec's "static CSS handling" is one filter, so it lives in `empty-state.php`, not a file of its own.
 
 Skipped:
-- `uninstall.php`: the plugin stores nothing (no options, no signatures). Add it if anything stored is introduced later.
+- `uninstall.php` (0.1.3): removes the bundled update checker's `external_updates-date-conditions-for-divi` site option and `puc_cron_check_updates-date-conditions-for-divi` cron event. The plugin itself stores nothing.
 - Server-side attribute registration (`divi_module_library_register_module_attrs`): only added if the save round-trip test (step 1) shows the builder stripping unregistered attributes.
 
 ## Data shape

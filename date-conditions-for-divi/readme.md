@@ -2,7 +2,7 @@
 
 Show or hide posts in a Divi 5 Loop based on ACF date fields, compared with the current date and time. Show a Divi Library item instead when no posts are left.
 
-Version 0.1.2. MIT licence. Source and releases: https://github.com/aidanashby/date-conditions-for-divi
+Version 0.1.3. MIT licence. Source and releases: https://github.com/aidanashby/date-conditions-for-divi
 
 ## Requirements
 
@@ -90,6 +90,10 @@ When updating from 0.1.0 or 0.1.1, clear Divi's static CSS once afterwards (the 
 - **ACF deactivated:** date rules are ignored, so all posts show, until ACF is back.
 - **Debug:** with `WP_DEBUG` on, a rule that's ignored because its field can't be found is logged once per page load to the PHP error log.
 
+## Updates
+
+New versions appear under **Dashboard → Updates** like any other plugin. The plugin checks for a new release on GitHub about twice a day. If you're on 0.1.2 or earlier, upload 0.1.3 or later by hand once to get this.
+
 ## Uninstalling
 
-The plugin stores nothing of its own (no options, no database tables), so there's nothing to clean up. Settings saved on pages stay in the page content, where Divi ignores them.
+Deleting the plugin from the Plugins screen removes the little data the update checker stores (one site option and one scheduled event). The plugin has no settings pages or database tables of its own. Settings saved on pages stay in the page content, where Divi ignores them.
