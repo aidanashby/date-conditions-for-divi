@@ -109,8 +109,8 @@ The expected results assume "now" is between 1 September and 1 December 2026. Af
 ### Building a release
 
 1. Bump the version in the plugin header and the `DCFD\VERSION` constant, and add a CHANGELOG.md entry.
-2. Zip the `date-conditions-for-divi/` folder so the zip contains that folder. On Windows, use `tar -a -c -f date-conditions-for-divi-<version>.zip date-conditions-for-divi`, not PowerShell's `Compress-Archive`, which writes backslash paths that Linux hosts extract wrongly.
-3. Create a GitHub release tagged `v<version>` with the zip attached. The zip must be attached: installed copies update from it, through the bundled [Plugin Update Checker](https://github.com/YahnisElsts/plugin-update-checker) (`plugin-update-checker/`, MIT).
+2. Commit, then push a tag: `git tag v<version> && git push origin v<version>`.
+3. The Release workflow (`.github/workflows/release.yml`) checks both versions match the tag, zips the `date-conditions-for-divi/` folder as `date-conditions-for-divi.zip`, and attaches it to the release. Installed copies update from that zip, through the bundled [Plugin Update Checker](https://github.com/YahnisElsts/plugin-update-checker) (`plugin-update-checker/`, MIT). Don't zip by hand.
 
 ### Conventions
 
