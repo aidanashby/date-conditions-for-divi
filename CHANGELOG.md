@@ -2,6 +2,13 @@
 
 All notable changes to Date Conditions for Divi. Versions follow [semantic versioning](https://semver.org/).
 
+## 0.1.4 (2026-09-28)
+
+### Added
+
+- Plugin icon on the Plugins and Updates screens.
+- `Update URI` header, so WordPress.org can't offer an unrelated plugin with the same name as an update.
+
 ## 0.1.3 (2026-09-24)
 
 ### Added

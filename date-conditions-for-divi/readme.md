@@ -2,7 +2,7 @@
 
 Show or hide posts in a Divi 5 Loop based on ACF date fields, compared with the current date and time. Show a Divi Library item instead when no posts are left.
 
-Version 0.1.3. MIT licence. Source and releases: https://github.com/aidanashby/date-conditions-for-divi
+Version 0.1.4. MIT licence. Source and releases: https://github.com/aidanashby/date-conditions-for-divi
 
 ## Requirements
 
