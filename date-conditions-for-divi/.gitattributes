@@ -1,0 +1,3 @@
+# Kept out of the release zip. Applies because the zip is built from this folder.
+/.gitattributes export-ignore
+/assets/icon-white.svg export-ignore
