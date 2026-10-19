@@ -104,6 +104,8 @@ You need a local WordPress site with Divi 5 and ACF, with the `date-conditions-f
    wp eval-file tests/current-page-check.php            # Current Page Loops
    ```
 
+Without a standalone PHP, run `rules-test.php` through WP-CLI instead: `wp eval-file tests/rules-test.php --skip-plugins --skip-themes`. WP-CLI runs the file inside a function, so the check counters only add up if the test declares them `global` first (add `global $failures, $checks;` to a temporary copy).
+
 The expected results assume "now" is between 1 September and 1 December 2026. After that, update the fixture dates in `tests/fixtures/setup-test-data.php` and the expectations in `tests/check-test-page.sh`.
 
 ### Building a release
@@ -117,4 +119,5 @@ The expected results assume "now" is between 1 September and 1 December 2026. Af
 - Prefix `dcfd_`, PHP namespace `DCFD`, JS hook namespace `dcfd`, Divi attributes `dcfd*` (e.g. `dcfdDateRules`, `dcfdEmptyState`).
 - Plain JavaScript, no build step.
 - Only public Divi hooks and methods, including public filters that are only documented in Divi's source. No private methods, and no parsing of rendered HTML.
+- Every PHP file in the plugin exits when requested directly (`defined( 'ABSPATH' ) || exit;`). `tests/rules-test.php` defines `ABSPATH` so it can load `includes/rules.php` without WordPress.
 - No translation-ready strings yet.

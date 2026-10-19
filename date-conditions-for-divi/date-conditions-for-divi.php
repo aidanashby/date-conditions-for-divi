@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Date Conditions for Divi
  * Description:       Filter Divi 5 Loops by ACF date fields compared with the current date and time, and show a Divi Library item when a Loop is empty.
- * Version:           0.1.4
+ * Version:           0.1.5
  * Requires at least: 6.5
  * Requires PHP:      7.4
  * Author:            aidanashby
@@ -18,7 +18,7 @@ namespace DCFD;
 
 defined( 'ABSPATH' ) || exit;
 
-const VERSION  = '0.1.4';
+const VERSION  = '0.1.5';
 const MIN_DIVI = '5.8.1';
 
 require_once __DIR__ . '/includes/rules.php';

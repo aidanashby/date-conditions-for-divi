@@ -2,11 +2,12 @@
 
 All notable changes to Date Conditions for Divi. Versions follow [semantic versioning](https://semver.org/).
 
-## Unreleased
+## 0.1.5 (2026-10-19)
 
 ### Changed
 
 - The files in `includes/` exit when requested directly, instead of running outside WordPress.
+- The release zip no longer includes `.gitattributes` or the unused white icon.
 
 ## 0.1.4 (2026-09-28)
 
