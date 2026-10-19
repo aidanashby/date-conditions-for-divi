@@ -2,6 +2,12 @@
 
 All notable changes to Date Conditions for Divi. Versions follow [semantic versioning](https://semver.org/).
 
+## Unreleased
+
+### Changed
+
+- The files in `includes/` exit when requested directly, instead of running outside WordPress.
+
 ## 0.1.4 (2026-09-28)
 
 ### Added

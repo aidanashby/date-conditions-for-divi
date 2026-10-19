@@ -11,6 +11,8 @@
 
 namespace DCFD;
 
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Register routes.
  */

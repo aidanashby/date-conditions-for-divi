@@ -8,6 +8,8 @@
 
 namespace DCFD;
 
+defined( 'ABSPATH' ) || exit;
+
 /**
  * A published Divi Library item, or null. Re-checked at render time (SPEC 6.4, 8).
  *

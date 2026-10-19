@@ -10,6 +10,8 @@
 
 namespace DCFD;
 
+defined( 'ABSPATH' ) || exit;
+
 const OPERATORS        = [ 'after', 'before', 'equals' ];
 const DEFAULT_OPERATOR = 'after'; // Must match the builder field's default (Divi doesn't save defaults).
 const DATE_PICKER      = 'date_picker';

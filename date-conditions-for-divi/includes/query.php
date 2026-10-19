@@ -7,6 +7,8 @@
 
 namespace DCFD;
 
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Loop query types this plugin acts on (SPEC 4). The builder REST endpoint names the
  * post-types query 'post_type' (singular); block attributes use 'post_types'.

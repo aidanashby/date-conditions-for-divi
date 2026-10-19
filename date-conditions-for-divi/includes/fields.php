@@ -7,6 +7,8 @@
 
 namespace DCFD;
 
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Whether ACF (or SCF) is available.
  */

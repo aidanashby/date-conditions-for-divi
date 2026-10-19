@@ -9,6 +9,7 @@
  * "show the post if Now [operator] field", Date Picker = 23:59:59, empty/missing = shown.
  */
 
+define( 'ABSPATH', __DIR__ . '/' ); // rules.php exits without it.
 require __DIR__ . '/../date-conditions-for-divi/includes/rules.php';
 
 use const DCFD\DATE_PICKER;
