@@ -1,0 +1,11 @@
+{
+  "dependencies": [
+    {
+      "name": "PHP",
+      "purpose": "Runs tests/rules-test.php",
+      "optional": true,
+      "check": { "run": "php -v" },
+      "install": "winget install --id PHP.PHP.8.3 -e --accept-package-agreements --accept-source-agreements"
+    }
+  ]
+}
