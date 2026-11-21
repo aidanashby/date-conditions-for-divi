@@ -1,6 +1,6 @@
 <?php
 // Test fixture: ACF field group "DCFD spike" on posts + seven test posts (A to G). Run with: wp eval-file <path>
-// Also sets the site timezone to Europe/London. Idempotent: re-running refreshes field values (F = today, G = yesterday), so re-run it before testing on a new day. Local/dev sites only.
+// Also sets the site timezone to Europe/London. Idempotent: re-running refreshes field values (A and E's group field 90 days ago, B and E 90 days ahead, F today, G yesterday), so re-run it before testing on a new day. Local/dev sites only.
 update_option( 'timezone_string', 'Europe/London' );
 
 if ( ! acf_get_field_group( 'group_dcfd_spike' ) ) {
@@ -26,12 +26,15 @@ if ( ! acf_get_field_group( 'group_dcfd_spike' ) ) {
 	] );
 }
 
-$posts = [
-	'A past ends'        => [ 'event_ends' => '2026-09-01 10:00:00' ],
-	'B future ends'      => [ 'event_ends' => '2026-12-01 10:00:00' ],
+// Past and future are 90 days either side of the run, so the expectations never go out of date.
+$past   = wp_date( 'Y-m-d 10:00:00', time() - 90 * DAY_IN_SECONDS );
+$future = wp_date( 'Y-m-d 10:00:00', time() + 90 * DAY_IN_SECONDS );
+$posts  = [
+	'A past ends'        => [ 'event_ends' => $past ],
+	'B future ends'      => [ 'event_ends' => $future ],
 	'C missing'          => [],
 	'D empty string'     => [ 'event_ends' => '' ],
-	'E group past'       => [ 'event_ends' => '2026-12-01 10:00:00', 'key_facts' => [ 'event_ends' => '2026-09-01 10:00:00' ] ],
+	'E group past'       => [ 'event_ends' => $future, 'key_facts' => [ 'event_ends' => $past ] ],
 	'F date today'       => [ 'event_date' => wp_date( 'Ymd' ) ],
 	'G date yesterday'   => [ 'event_date' => wp_date( 'Ymd', time() - DAY_IN_SECONDS ) ],
 ];

@@ -106,7 +106,7 @@ You need a local WordPress site with Divi 5 and ACF, with the `date-conditions-f
 
 Without a standalone PHP, run `rules-test.php` through WP-CLI instead: `wp eval-file tests/rules-test.php --skip-plugins --skip-themes`. WP-CLI runs the file inside a function, so the check counters only add up if the test declares them `global` first (add `global $failures, $checks;` to a temporary copy).
 
-The expected results assume "now" is between 1 September and 1 December 2026. After that, update the fixture dates in `tests/fixtures/setup-test-data.php` and the expectations in `tests/check-test-page.sh`.
+The fixture dates are relative to the day you run `setup-test-data.php` (past dates 90 days back, future dates 90 days ahead), so the expected results hold on any date. Re-run it before testing on a new day.
 
 ### Building a release
 

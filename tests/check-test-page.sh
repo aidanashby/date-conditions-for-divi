@@ -1,7 +1,7 @@
 #!/bin/bash
 # Fetch the test page and compare each section's posts with the expected result.
-# Expectations assume the fixture posts from tests/fixtures/setup-test-data.php and a "now"
-# after 1 Sep 2026 and before 1 Dec 2026, with F = today and G = yesterday.
+# Expectations assume the fixture posts from tests/fixtures/setup-test-data.php, written on the day of
+# testing: A ended 90 days ago, B ends in 90 days, F = today and G = yesterday.
 #
 # Usage: tests/check-test-page.sh <site-url>     e.g. https://your-site.test
 BASE="${1:?Usage: tests/check-test-page.sh <site-url>}"
